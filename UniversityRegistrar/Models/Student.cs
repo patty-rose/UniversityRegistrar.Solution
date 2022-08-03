@@ -14,7 +14,7 @@ namespace UniversityRegistrar.Models
     // auto implemented properties
     public string Name { get; set; }
     public int StudentId { get; set; }
-    public DateTime EnrollmentDate { get; set; }
+    public string EnrollmentDate { get; set; }
     public virtual ICollection<CourseStudent> JoinEntities { get; }
   }
 }
