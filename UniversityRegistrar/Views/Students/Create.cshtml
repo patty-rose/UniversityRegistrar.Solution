@@ -2,6 +2,8 @@
   Layout = "_Layout";
 }
 
+@using System.Collections.Generic;
+@using UniversityRegistrar.Models;
 @model UniversityRegistrar.Models.Student
 
 <h4>Add a new task</h4>
@@ -10,13 +12,13 @@
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name)
 
-  @* @Html.Label("Select course")
-  @Html.DropDownList("CourseId") *@
+  @Html.Label("Select course")
+  @Html.DropDownList("CourseId")
 
   @Html.Label("Enrollment Date:")
   @Html.TextBoxFor(model => model.EnrollmentDate)
 
-  <input type="submit" value="Add new Student" class="btn btn-default"/>
+  <input type="submit" value="Add new Student"/>
 }
 <hr />
 <p>@Html.ActionLink("Show all Students", "Index")</p>
