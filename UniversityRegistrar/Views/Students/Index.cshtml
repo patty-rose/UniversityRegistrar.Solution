@@ -36,7 +36,10 @@
           @Html.DisplayFor(modelStudent => student.Name)
         </td>
         <td>
-          courses
+          @foreach(var join in student.JoinEntities)
+          {
+            @join.Course.CourseNumber
+          }
         </td>
         <td>
           enrollment date
