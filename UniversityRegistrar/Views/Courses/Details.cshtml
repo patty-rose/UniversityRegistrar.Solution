@@ -10,7 +10,7 @@
 <h3>@Html.DisplayNameFor(model => model.CourseNumber): @Html.DisplayFor(model => model.CourseNumber)<h3>
 
   
-@* @if(@Model.JoinEntities.Count == 0)
+@if(@Model.JoinEntities.Count == 0)
 {
   <p>This Course does not contain any students</p>
 }
@@ -20,10 +20,10 @@ else
   <ul>
   @foreach(var join in Model.JoinEntities)
   {
-    <li>@join.Student.StudentName</li>
+    <li>@join.Student.Name</li>
   }
   </ul>
-} *@
+}
 <hr />
 <p>@Html.ActionLink("Add student", "Create", "Students", new { id = Model.CourseId })</p>
 <p>@Html.ActionLink("Edit Course", "Edit", new { id = Model.CourseId })</p>
