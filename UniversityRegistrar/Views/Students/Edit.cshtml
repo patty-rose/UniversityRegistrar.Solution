@@ -18,10 +18,8 @@
     @Html.LabelFor(model => model.EnrollmentDate)
     @Html.EditorFor(model => model.EnrollmentDate)
 
-    @* @Html.Label("Select category")
-    @Html.DropDownList("CategoryId") *@
-
-    @* @Html.CheckBoxFor(model => model.IsComplete) *@
+    @Html.Label("Select course")
+    @Html.DropDownList("CourseId")
 
     <input type="submit" value="Save" />
 }

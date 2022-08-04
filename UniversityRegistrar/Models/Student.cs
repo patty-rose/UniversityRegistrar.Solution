@@ -9,6 +9,7 @@ namespace UniversityRegistrar.Models
     public Student()
       {
           this.JoinEntities = new HashSet<CourseStudent>();
+          this.JoinDeptStu = new HashSet<DepartmentStudent>();
       }
       
     // auto implemented properties
@@ -16,5 +17,6 @@ namespace UniversityRegistrar.Models
     public int StudentId { get; set; }
     public string EnrollmentDate { get; set; }
     public virtual ICollection<CourseStudent> JoinEntities { get; }
+    public virtual ICollection<DepartmentStudent> JoinDeptStu { get; }
   }
 }
