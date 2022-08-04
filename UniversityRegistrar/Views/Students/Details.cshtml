@@ -24,7 +24,10 @@
         @Html.DisplayFor(model => model.Name)
       </td>
       <td>
-        "..courses"
+        @foreach(var join in Model.JoinEntities)
+          {
+            @join.Course.CourseNumber
+          }
       </td>
       <td>
         @Html.ActionLink("Edit", "Edit", new { id = Model.StudentId }) |
