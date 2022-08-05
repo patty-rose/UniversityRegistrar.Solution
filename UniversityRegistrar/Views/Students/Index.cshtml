@@ -20,10 +20,13 @@
         Student Name
       </th>
       <th>
-        courses
+        Courses
       </th>
       <th>
-        date of enrollment
+        Major
+      </th>
+      <th>
+        Date of Enrollment
       </th>
       <th></th>
     </tr>
@@ -39,6 +42,16 @@
           @foreach(var join in student.JoinEntities)
           {
             @join.Course.CourseNumber
+          }
+        </td>
+        <td>
+          @if (student.JoinDeptStu.Count == 0)
+          {
+            <p>No declared Major</p>
+          }
+          @foreach(var join in student.JoinDeptStu)
+          {
+            @join.Department.DepartmentName
           }
         </td>
         <td>
