@@ -59,7 +59,7 @@
         </td>
         <td>
           @Html.ActionLink("Details", "Details", new { id = student.StudentId }) |
-          @Html.ActionLink("Edit", "Edit", new { id = student.StudentId }) |
+          @Html.ActionLink("Edit", "Edit", new { id = student.StudentId }) | @Html.ActionLink("Declare Major", "DeclareMajor", new { id = student.StudentId }) | 
           @Html.ActionLink("Delete", "Delete", new { id = student.StudentId })
         </td>
       </tr>

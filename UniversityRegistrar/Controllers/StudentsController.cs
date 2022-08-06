@@ -75,11 +75,11 @@ namespace UniversityRegistrar.Controllers
     }
 
     [HttpPost]
-    public ActionResult DeclareMajor(Student Student, int DepartmentId)
+    public ActionResult DeclareMajor(Student student, int DepartmentId)
     {
       if (DepartmentId != 0)
       {
-        _db.DepartmentStudent.Add(new DepartmentStudent() { DepartmentId = DepartmentId, StudentId = Student.StudentId });
+        _db.DepartmentStudent.Add(new DepartmentStudent() { DepartmentId = DepartmentId, StudentId = student.StudentId });
         _db.SaveChanges();
       }
       return RedirectToAction("Index");
