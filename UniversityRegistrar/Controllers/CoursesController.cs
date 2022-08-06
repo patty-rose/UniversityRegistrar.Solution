@@ -47,11 +47,12 @@ namespace UniversityRegistrar.Controllers
     {
       var thisCourse = _db.Courses
           .Include(course => course.JoinEntities)
-          .ThenInclude(join => join.Student)
+          .ThenInclude(join => join.Student).Include(course => course.JoinCourseDept)
+          .ThenInclude(join => join.Department)
           .FirstOrDefault(course => course.CourseId == id);
       return View(thisCourse);
     }
-
+    
     public ActionResult Edit(int id)
     {
       var thisCourse = _db.Courses.FirstOrDefault(course => course.CourseId == id);

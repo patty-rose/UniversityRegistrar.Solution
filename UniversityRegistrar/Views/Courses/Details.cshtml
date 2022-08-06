@@ -9,13 +9,11 @@
 <h3>@Html.DisplayNameFor(model => model.CourseName): @Html.DisplayFor(model => model.CourseName)<h3>
 <h3>@Html.DisplayNameFor(model => model.CourseNumber): @Html.DisplayFor(model => model.CourseNumber)<h3>
 
-<h3>@Html.DisplayNameFor(model => model.JoinCourseDept.join): @Html.DisplayFor(model => model.JoinCourseDept.join)<h3> 
-  <ul>
+<h3>@Html.Label("Department"): 
 @foreach(var join in Model.JoinCourseDept)
     {
-      <li>@join.Department.DepartmentName</li>
+      <p>@join.Department.DepartmentName</p>
     }
-  </ul>
   
 @if(@Model.JoinEntities.Count == 0)
 {
