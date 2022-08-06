@@ -30,12 +30,18 @@ namespace UniversityRegistrar.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(Course course)
+    public ActionResult Create(Course course, int DepartmentId)
     {
       _db.Courses.Add(course);
       _db.SaveChanges();
+      if (DepartmentId != 0)
+      {
+        _db.CourseDepartment.Add(new CourseDepartment() { DepartmentId = DepartmentId, CourseId = course.CourseId });
+        _db.SaveChanges();
+      }
       return RedirectToAction("Index");
     }
+      
 
     public ActionResult Details(int id)
     {
