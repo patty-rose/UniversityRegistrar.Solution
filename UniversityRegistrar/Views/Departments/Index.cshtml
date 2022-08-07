@@ -12,12 +12,52 @@
   <h3>No departments have been added yet!</h3>
 } 
 
-<ul>
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        Department Name
+      </th>
+      <th>
+        Number of Students
+      </th>
+      <th>
+        Courses
+      </th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
   @foreach(Department department in Model)
   {
-    <li>@Html.ActionLink($"{department.DepartmentName}", "Details", new { id = department.DepartmentId })</li>
-  }
-</ul>
+    <tr>
+        <td>
+          @Html.DisplayFor(modelDepartment => department.DepartmentName)
+        </td>
+        <td>
+          @department.JoinDeptStu.Count
+        </td>
+        <td>
+          @if (department.JoinCourseDept.Count == 0)
+          {
+            <p>No courses</p>
+          }
+          @foreach(var join in department.JoinCourseDept)
+          {
+            <li>@join.Course.CourseName</li>
+          }
+        </td>
+        <td>
+          @Html.ActionLink("Details", "Details", new { id = department.DepartmentId }) |
+          @Html.ActionLink("Edit", "Edit", new { id = department.DepartmentId }) | 
+          @Html.ActionLink("Delete", "Delete", new { id = department.DepartmentId })
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+
 <hr />
 <p>@Html.ActionLink("Add new department", "Create")</p>
 <p>@Html.ActionLink("Home", "Index", "Home")</p>
